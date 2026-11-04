@@ -33,7 +33,9 @@
   /* hero */
   header.hero{position:relative; overflow:hidden; color:#fff;
     background:radial-gradient(1200px 500px at 85% -10%, #b3171b 0%, transparent 60%), linear-gradient(160deg, var(--cardinal) 0%, var(--cardinal-dk) 100%)}
-  .hero svg.net{position:absolute; right:-60px; top:-20px; width:620px; max-width:70%; opacity:.22}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
+  .gears{margin:0; background:#fff; border-radius:16px; padding:18px; box-shadow:0 18px 40px rgba(0,0,0,.25); border-bottom:5px solid var(--gold)}
+  .gears img{display:block; width:100%; height:auto}
   .hero .wrap{position:relative; padding:88px 24px 80px}
   .eyebrow{display:inline-block; color:var(--cardinal-dk); background:var(--gold); font-weight:600; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; padding:5px 10px; border-radius:3px}
   .hero h1{font-family:var(--serif); font-weight:700; font-size:clamp(2.3rem, 5.4vw, 3.9rem); line-height:1.08; margin:18px 0 14px; max-width:15ch}
@@ -84,6 +86,7 @@
 
   .venue-photo{display:block; width:100%; height:320px; object-fit:cover; border-radius:12px; margin-bottom:40px}
   .venue-photo.ph{display:flex; align-items:center; justify-content:center; border:2px dashed var(--line); color:var(--muted); background:repeating-linear-gradient(45deg,#f6f3ef 0 12px,#fbfaf8 12px 24px)}
+  .campus-map{display:block; width:100%; height:auto; border-radius:10px; border:1px solid var(--line)}
   .map{position:relative; border-radius:10px; overflow:hidden; border:1px solid var(--line); background:#eee; aspect-ratio:4/3}
   .map iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
   footer{background:#2a0505; color:#e9d6d6; padding:40px 0; font-size:.9rem}
@@ -102,6 +105,8 @@
     .venue-photo{height:200px}
     .sched td.t{width:auto; padding-right:8px}
     .hero .wrap{padding:64px 24px 56px}
+    .hero-grid{grid-template-columns:1fr}
+    .gears{max-width:420px}
   }
 </style>
 </head>
@@ -123,20 +128,8 @@
 </nav>
 
 <header class="hero" id="top">
-  <!-- decorative network motif -->
-  <svg class="net" viewBox="0 0 600 420" aria-hidden="true" fill="none" stroke="#FFCC00" stroke-width="1.4">
-    <g>
-      <line x1="60" y1="300" x2="190" y2="180"/><line x1="190" y1="180" x2="330" y2="240"/><line x1="330" y1="240" x2="470" y2="110"/>
-      <line x1="190" y1="180" x2="250" y2="60"/><line x1="250" y1="60" x2="470" y2="110"/><line x1="330" y1="240" x2="420" y2="360"/>
-      <line x1="470" y1="110" x2="560" y2="230"/><line x1="420" y1="360" x2="560" y2="230"/><line x1="60" y1="300" x2="220" y2="370"/>
-      <line x1="220" y1="370" x2="330" y2="240"/><line x1="220" y1="370" x2="420" y2="360"/>
-    </g>
-    <g fill="#FFCC00" stroke="none">
-      <circle cx="60" cy="300" r="6"/><circle cx="190" cy="180" r="8"/><circle cx="330" cy="240" r="10"/><circle cx="470" cy="110" r="7"/>
-      <circle cx="250" cy="60" r="5"/><circle cx="420" cy="360" r="7"/><circle cx="560" cy="230" r="6"/><circle cx="220" cy="370" r="5"/>
-    </g>
-  </svg>
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div>
     <h1>ORAI Student Symposium 2026</h1>
     <p class="lede">A day of student research at the interface of Operations Research and Artificial Intelligence, hosted by the USC ORAI PhD certificate program.</p>
     <ul class="facts">
@@ -148,6 +141,10 @@
       <a class="btn gold" href="https://docs.google.com/forms/d/1Uja8vBDDRkYOVWJdghtm1kIoAe74T0sJFUIzZnEXgrU/viewform">Register / submit a poster</a>
       <a class="btn ghost" href="#schedule">See the schedule</a>
     </div>
+    </div>
+    <figure class="gears">
+      <img src="img/orai-gears.webp" alt="The ORAI Graduate Certificate: four new courses, research in ORAI, and seminars, research symposium and workshops">
+    </figure>
   </div>
 </header>
 
@@ -197,8 +194,7 @@
     <p class="kicker">USC faculty from computer science, data sciences and operations, and industrial engineering talk about how they navigated the academic job market, what search committees look for, and how to position work that spans OR and AI.</p>
     <div class="people">
       <div class="person">
-        <!-- replace with <img class="avatar" src="img/micha.jpg" alt="Evi Micha"> -->
-        <div class="avatar" role="img" aria-label="Evi Micha">EM</div>
+        <img class="avatar" src="img/micha.jpg" alt="Evi Micha">
         <div class="name">Dr. Evi Micha</div>
         <div class="role">Assistant Professor of Computer Science, USC</div>
       </div>
@@ -208,7 +204,7 @@
         <div class="role">Associate Professor of Data Sciences and Operations, USC</div>
       </div>
       <div class="person">
-        <div class="avatar" role="img" aria-label="Andrés Gómez">AG</div>
+        <img class="avatar" src="img/gomez.jpg" alt="Andrés Gómez">
         <div class="name">Dr. Andrés Gómez</div>
         <div class="role">Associate Professor of Industrial and Systems Engineering, USC</div>
       </div>
@@ -264,10 +260,6 @@
 </section>
 
 <section id="venue">
-  <div class="wrap">
-    <!-- Swap the placeholder for: <img class="venue-photo" src="img/ginsburg-hall.jpg" alt="Ginsburg Hall at USC"> plus a photo credit -->
-    <div class="venue-photo ph">Photo of Ginsburg Hall (coming soon)</div>
-  </div>
   <div class="wrap two">
     <div>
       <h2>Venue &amp; getting here</h2>
@@ -275,12 +267,14 @@
       <h3>Location</h3>
       <p>The symposium is in Ginsburg Hall (GCS), on Downey Way just east of Vermont Avenue on the west side of campus.</p>
       <h3>Public transit</h3>
-      <p>The Metro E Line (Expo) is an easy way to get to campus. The closest stop is <b>Expo Park/USC</b> (Exposition Blvd &amp; Vermont Ave), about a 10-minute walk north to Ginsburg Hall. Plan your route with the <a href="https://www.metro.net/riding/trip-planner/">Metro trip planner</a>.</p>
+      <p>The Metro E Line (Expo) is an easy way to get to campus. The closest stop is <b>Expo/Vermont</b>, about a 10-minute walk north along Vermont Avenue to Ginsburg Hall. Plan your route with the <a href="https://www.metro.net/riding/trip-planner/">Metro trip planner</a>.</p>
       <h3>Parking</h3>
       <p>Parking information is coming soon. <!-- TBC: e.g., "Parking passes will be emailed to registered attendees." --></p>
       <p>Questions about getting here? Email <a href="mailto:ldimitro@usc.edu">ldimitro@usc.edu</a>.</p>
     </div>
     <div>
+      <a href="img/campus-map.jpg"><img class="campus-map" src="img/campus-map.jpg" alt="USC campus map with a star on Ginsburg Hall, on Downey Way between Irani Hall and Michelson Hall, near Vermont Avenue"></a>
+      <p style="font-size:.85rem; color:var(--muted); margin:6px 0 18px">Campus map: USC. Ginsburg Hall opened in 2024 and is starred.</p>
       <div class="map">
         <iframe title="Map of Ginsburg Hall, USC" src="https://www.google.com/maps?q=Ginsburg+Hall,+1031+Downey+Way,+Los+Angeles,+CA+90089&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
