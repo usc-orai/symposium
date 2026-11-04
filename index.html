@@ -84,11 +84,19 @@
   .orai-pts div{border-top:3px solid var(--cardinal); padding-top:12px; font-size:.95rem}
   .orai-pts b{display:block; font-family:var(--serif); font-size:1.05rem; margin-bottom:4px}
 
-  .venue-photo{display:block; width:100%; height:320px; object-fit:cover; border-radius:12px; margin-bottom:40px}
+  .venue-photo{display:block; width:100%; height:360px; object-fit:cover; object-position:center 40%; border-radius:12px; margin-bottom:40px}
   .venue-photo.ph{display:flex; align-items:center; justify-content:center; border:2px dashed var(--line); color:var(--muted); background:repeating-linear-gradient(45deg,#f6f3ef 0 12px,#fbfaf8 12px 24px)}
   .campus-map{display:block; width:100%; height:auto; border-radius:10px; border:1px solid var(--line)}
   .map{position:relative; border-radius:10px; overflow:hidden; border:1px solid var(--line); background:#eee; aspect-ratio:4/3}
   .map iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .reg-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-top:8px}
+  .reg-grid h3{margin-top:0}
+  ol.dates{list-style:none; margin:0; padding:0; border-left:3px solid var(--gold)}
+  ol.dates li{position:relative; padding:8px 0 8px 22px}
+  ol.dates li::before{content:""; position:absolute; left:-8px; top:15px; width:13px; height:13px; border-radius:50%; background:var(--white); border:3px solid var(--cardinal)}
+  ol.dates li span{display:inline-block; min-width:124px; font-weight:600; color:var(--cardinal)}
+  ol.dates li.big::before{background:var(--cardinal)}
+  ol.dates li.big{font-weight:600}
   footer{background:#2a0505; color:#e9d6d6; padding:40px 0; font-size:.9rem}
   footer a{color:var(--gold)}
   footer .logos{display:flex; gap:40px; align-items:center; flex-wrap:wrap; margin-bottom:24px; background:#fff; border-radius:10px; padding:16px 28px; width:fit-content; max-width:100%}
@@ -100,6 +108,7 @@
     nav ul{width:100%; overflow-x:auto; gap:20px; padding:8px 0 10px; -webkit-overflow-scrolling:touch; scrollbar-width:none}
     nav ul::-webkit-scrollbar{display:none}
     nav ul a{white-space:nowrap}
+    .reg-grid{grid-template-columns:1fr; gap:32px}
     .two, .orai-pts{grid-template-columns:1fr; gap:24px}
     .people{grid-template-columns:1fr}
     .venue-photo{height:200px}
@@ -219,7 +228,7 @@
       <p class="kicker">Posters are open to any student (PhD, master's, or undergraduate) at USC or elsewhere whose work involves operations research, artificial intelligence, or both.</p>
       <h3>How to submit</h3>
       <ol class="clean">
-        <li><b>Register as soon as you can</b> using the <a href="#register">registration form</a>. Choose "presenting a poster" and give a title, authors, and a short abstract.</li>
+        <li><b><a href="https://docs.google.com/forms/d/1Uja8vBDDRkYOVWJdghtm1kIoAe74T0sJFUIzZnEXgrU/viewform">Register</a> as soon as you can.</b> Choose "presenting a poster" and give a title, authors, and a short abstract.</li>
         <li><b>Email your poster as a PDF</b> by the deadline below if you want it considered for the poster prize.</li>
       </ol>
       <div class="deadline">
@@ -242,24 +251,34 @@
 </section>
 
 <section id="register">
-  <div class="wrap two">
-    <div>
-      <h2>Registration &amp; travel support</h2>
-      <div class="deadline">
-        <strong>Register by Monday, November 24</strong> so we can plan lunch.<br>
-        <strong>Ask for travel support by Monday, November 17.</strong>
+  <div class="wrap">
+    <h2>Registration &amp; travel support</h2>
+    <p class="kicker">Registration is free and open to everyone: students and faculty, from USC or elsewhere, presenting or just attending. Lunch is included.</p>
+    <div class="reg-grid">
+      <div>
+        <h3>Key dates</h3>
+        <ol class="dates">
+          <li><span>Mon, Nov 17</span>Last day to ask for travel support</li>
+          <li><span>Fri, Nov 21</span>Travel support decisions sent</li>
+          <li><span>Mon, Nov 24</span>Registration closes (so we can plan lunch)</li>
+          <li><span>Mon, Dec 1</span>Poster PDFs due for prize consideration</li>
+          <li class="big"><span>Thu, Dec 3</span>Symposium, 9:45 am – 3:30 pm</li>
+        </ol>
+        <p style="margin-top:24px"><a class="btn gold" href="https://docs.google.com/forms/d/1Uja8vBDDRkYOVWJdghtm1kIoAe74T0sJFUIzZnEXgrU/viewform">Register now</a></p>
       </div>
-      <p><a class="btn gold" href="https://docs.google.com/forms/d/1Uja8vBDDRkYOVWJdghtm1kIoAe74T0sJFUIzZnEXgrU/viewform">Open the registration form</a></p>
-    </div>
-    <div class="card">
-      <h3>Travel support for students</h3>
-      <p>We have a limited number of small travel awards (<b>$50–$100</b>) for students coming from outside USC. Priority goes to students applying, or planning to apply, to PhD programs at USC for Fall 2027.</p>
-      <p style="margin-bottom:0">To apply, check the travel support box on the registration form and write a few sentences about yourself. We'll send decisions by <b>Friday, November 21</b>. Awards are paid as reimbursements after the event.</p>
+      <div>
+        <h3>Travel support for students</h3>
+        <p>We have a limited number of small travel awards (<b>$50–$100</b>) for students coming from outside USC. Priority goes to students applying, or planning to apply, to PhD programs at USC for Fall 2027.</p>
+        <p>To apply, check the travel support box when you register and write a few sentences about yourself. Awards are paid as reimbursements after the event.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="venue">
+  <div class="wrap">
+    <img class="venue-photo" src="img/ginsburg-hall.jpg" alt="Front of Ginsburg Hall at USC, a glass-and-bronze building on Downey Way">
+  </div>
   <div class="wrap two">
     <div>
       <h2>Venue &amp; getting here</h2>
@@ -269,16 +288,12 @@
       <h3>Public transit</h3>
       <p>The Metro E Line (Expo) is an easy way to get to campus. The closest stop is <b>Expo/Vermont</b>, about a 10-minute walk north along Vermont Avenue to Ginsburg Hall. Plan your route with the <a href="https://www.metro.net/riding/trip-planner/">Metro trip planner</a>.</p>
       <h3>Parking</h3>
-      <p>Parking information is coming soon. <!-- TBC: e.g., "Parking passes will be emailed to registered attendees." --></p>
+      <p>The closest visitor parking is the <b>Downey Way Parking Structure</b> (PSA), just southwest of Ginsburg Hall. More parking details are coming soon. <!-- TBC: e.g., "Parking passes will be emailed to registered attendees." --></p>
       <p>Questions about getting here? Email <a href="mailto:ldimitro@usc.edu">ldimitro@usc.edu</a>.</p>
     </div>
     <div>
-      <a href="img/campus-map.jpg"><img class="campus-map" src="img/campus-map.jpg" alt="USC campus map with a star on Ginsburg Hall, on Downey Way between Irani Hall and Michelson Hall, near Vermont Avenue"></a>
-      <p style="font-size:.85rem; color:var(--muted); margin:6px 0 18px">Campus map: USC. Ginsburg Hall opened in 2024 and is starred.</p>
-      <div class="map">
-        <iframe title="Map of Ginsburg Hall, USC" src="https://www.google.com/maps?q=Ginsburg+Hall,+1031+Downey+Way,+Los+Angeles,+CA+90089&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-      </div>
-      <p style="font-size:.92rem; margin-top:10px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ginsburg+Hall+1031+Downey+Way+Los+Angeles">Open in Google Maps</a> · <a href="https://maps.usc.edu/">USC campus map</a></p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Ginsburg+Hall+1031+Downey+Way+Los+Angeles"><img class="campus-map" src="img/ginsburg-map.jpg" alt="Map of the west side of USC's campus with a star on Ginsburg Hall, between Childs Way and Downey Way just east of Vermont Avenue. The Downey Way Parking Structure is just to the southwest."></a>
+      <p style="font-size:.85rem; color:var(--muted); margin:6px 0 0">Map data © Google. <a href="https://www.google.com/maps/search/?api=1&amp;query=Ginsburg+Hall+1031+Downey+Way+Los+Angeles">Open in Google Maps</a> · <a href="https://maps.usc.edu/">USC campus map</a></p>
     </div>
   </div>
 </section>
