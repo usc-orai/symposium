@@ -1,6 +1,6 @@
-# ORAI Student Symposium 2026
+# ORAI Research Symposium 2026
 
-Website for the ORAI Student Symposium (Thursday, December 3, 2026, Ginsburg Hall GCS 107, USC).
+Website for the ORAI Research Symposium (Thursday, December 3, 2026, Ginsburg Hall GCS 107, USC).
 
 Live site: https://usc-orai.github.io/symposium/
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ORAI Student Symposium 2026 · USC</title>
-<meta name="description" content="The first ORAI Student Symposium on Operations Research and Artificial Intelligence. December 3, 2026, Ginsburg Hall, University of Southern California.">
+<title>ORAI Research Symposium 2026 · USC</title>
+<meta name="description" content="The first ORAI Research Symposium on Operations Research and Artificial Intelligence. December 3, 2026, Ginsburg Hall, University of Southern California.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -73,8 +73,8 @@
   .sched tr.hl td.e{color:var(--cardinal)}
 
   /* people */
-  .people{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:28px}
-  .person{text-align:center}
+  .people{display:flex; flex-wrap:wrap; justify-content:center; gap:28px 24px; margin-top:28px}
+  .person{text-align:center; flex:0 1 300px}
   .avatar{width:132px; height:132px; border-radius:50%; margin:0 auto 14px; background:linear-gradient(145deg, var(--cardinal), var(--cardinal-dk)); color:var(--gold); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:2.2rem; font-weight:700; border:4px solid var(--gold); object-fit:cover}
   .person .name{font-weight:600; font-size:1.05rem}
   .person .role{color:var(--muted); font-size:.92rem; line-height:1.4}
@@ -110,7 +110,6 @@
     nav ul a{white-space:nowrap}
     .reg-grid{grid-template-columns:1fr; gap:32px}
     .two, .orai-pts{grid-template-columns:1fr; gap:24px}
-    .people{grid-template-columns:1fr}
     .venue-photo{height:200px}
     .sched td.t{width:auto; padding-right:8px}
     .hero .wrap{padding:64px 24px 56px}
@@ -139,11 +138,11 @@
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-    <h1>ORAI Student Symposium 2026</h1>
-    <p class="lede">A day of student research at the interface of Operations Research and Artificial Intelligence, hosted by the USC ORAI PhD certificate program.</p>
+    <h1>ORAI Research Symposium 2026</h1>
+    <p class="lede">A day of research at the interface of Operations Research and Artificial Intelligence, with a particular focus on student work, hosted by the USC ORAI PhD certificate program.</p>
     <ul class="facts">
       <li>Thursday, December 3, 2026</li>
-      <li>9:45 am – 3:30 pm</li>
+      <li>9:45 am – 3:20 pm</li>
       <li>Ginsburg Hall, GCS 107 · USC</li>
     </ul>
     <div class="btns">
@@ -163,8 +162,8 @@
   <div class="wrap two">
     <div>
       <h2>About the symposium</h2>
-      <p class="kicker">The first ORAI Student Symposium brings together PhD students, prospective students, and faculty working where optimization meets machine learning.</p>
-      <p>The day features short research talks and two poster sessions led by ORAI trainees and fellows, along with students from across USC and other universities. It ends with a lunch and a faculty panel on the academic job market in OR and AI.</p>
+      <p class="kicker">The first ORAI Research Symposium brings together PhD students, prospective students, and faculty working where optimization meets machine learning.</p>
+      <p>The day features short research talks and two poster sessions led by ORAI trainees and fellows, along with students from across USC and other universities. It ends with lunch and a faculty panel discussion.</p>
       <p>The symposium is a chance for current ORAI trainees and fellows to share their work and get to know one another. It is also a chance for students thinking about a PhD to see what research in ORAI looks like and meet the people doing it.</p>
     </div>
     <div class="card">
@@ -192,16 +191,26 @@
       <tr class="hl"><td class="t">12:20 – 1:00</td><td class="e">Student research talks II</td></tr>
       <tr><td class="t">1:00 – 1:15</td><td class="e">Poster awards &amp; discussion</td></tr>
       <tr class="brk"><td class="t">1:15 – 2:00</td><td class="e">Lunch</td></tr>
-      <tr class="hl"><td class="t">2:00 – 3:30</td><td class="e">Panel: The Academic Job Search in OR and AI</td></tr>
+      <tr class="hl"><td class="t">2:00 – 3:20</td><td class="e">Panel discussion</td></tr>
     </table>
   </div>
 </section>
 
 <section id="panel">
   <div class="wrap">
-    <h2>Panel: The Academic Job Search in OR and AI</h2>
-    <p class="kicker">USC faculty from computer science, data sciences and operations, and industrial engineering talk about how they navigated the academic job market, what search committees look for, and how to position work that spans OR and AI.</p>
+    <h2>Panel discussion</h2>
+    <p class="kicker">The day closes with a discussion among USC faculty from computer science, data sciences and operations, and industrial and systems engineering, moderated by Phebe Vayanos. More details coming soon.</p>
     <div class="people">
+      <div class="person">
+        <div class="avatar" role="img" aria-label="Phebe Vayanos">PV</div>
+        <div class="name">Dr. Phebe Vayanos <span style="font-weight:400; color:var(--muted)">(moderator)</span></div>
+        <div class="role">Associate Professor of Industrial and Systems Engineering and of Computer Science, USC</div>
+      </div>
+      <div class="person">
+        <div class="avatar" role="img" aria-label="Bistra Dilkina">BD</div>
+        <div class="name">Dr. Bistra Dilkina</div>
+        <div class="role">Associate Professor of Computer Science, USC</div>
+      </div>
       <div class="person">
         <img class="avatar" src="img/micha.jpg" alt="Evi Micha">
         <div class="name">Dr. Evi Micha</div>
@@ -225,7 +234,7 @@
   <div class="wrap two">
     <div>
       <h2>Call for posters</h2>
-      <p class="kicker">Posters are open to any student (PhD, master's, or undergraduate) at USC or elsewhere whose work involves operations research, artificial intelligence, or both.</p>
+      <p class="kicker">All students (PhD, master's, or undergraduate), at USC or elsewhere, can submit a poster on work involving operations research, artificial intelligence, or both.</p>
       <h3>How to submit</h3>
       <ol class="clean">
         <li><b><a href="https://docs.google.com/forms/d/1Uja8vBDDRkYOVWJdghtm1kIoAe74T0sJFUIzZnEXgrU/viewform">Register</a> as soon as you can.</b> Choose "presenting a poster" and give a title, authors, and a short abstract.</li>
@@ -243,7 +252,7 @@
       <ul class="clean">
         <li><b>Size:</b> up to 36″ × 48″, portrait or landscape. <!-- TBC with Bistra/Phebe --></li>
         <li><b>Printing:</b> presenters print and bring their own posters.</li>
-        <li><b>Prize:</b> awarded during the 1:00 pm session. Details coming soon.</li>
+        <li><b>Prizes:</b> cash prizes for the best poster and a runner-up, awarded during the 1:00 pm session.</li>
         <li><b>Sessions:</b> each poster is presented in one of the two sessions. We'll tell you which one.</li>
       </ul>
     </div>
@@ -262,7 +271,7 @@
           <li><span>Fri, Nov 21</span>Travel support decisions sent</li>
           <li><span>Mon, Nov 24</span>Registration closes (so we can plan lunch)</li>
           <li><span>Mon, Dec 1</span>Poster PDFs due for prize consideration</li>
-          <li class="big"><span>Thu, Dec 3</span>Symposium, 9:45 am – 3:30 pm</li>
+          <li class="big"><span>Thu, Dec 3</span>Symposium, 9:45 am – 3:20 pm</li>
         </ol>
         <p style="margin-top:24px"><a class="btn gold" href="https://docs.google.com/forms/d/1Uja8vBDDRkYOVWJdghtm1kIoAe74T0sJFUIzZnEXgrU/viewform">Register now</a></p>
       </div>
@@ -288,11 +297,11 @@
       <h3>Public transit</h3>
       <p>The Metro E Line (Expo) is an easy way to get to campus. The closest stop is <b>Expo/Vermont</b>, about a 10-minute walk north along Vermont Avenue to Ginsburg Hall. Plan your route with the <a href="https://www.metro.net/riding/trip-planner/">Metro trip planner</a>.</p>
       <h3>Parking</h3>
-      <p>The closest visitor parking is the <b>Downey Way Parking Structure</b> (PSA), just southwest of Ginsburg Hall. More parking details are coming soon. <!-- TBC: e.g., "Parking passes will be emailed to registered attendees." --></p>
+      <p>Parking details are coming soon. <!-- TBC: Lida is checking with the Ginsburg events team. Downey Way (PSA) does not take visitors before 4 pm Mon–Thu. --></p>
       <p>Questions about getting here? Email <a href="mailto:ldimitro@usc.edu">ldimitro@usc.edu</a>.</p>
     </div>
     <div>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Ginsburg+Hall+1031+Downey+Way+Los+Angeles"><img class="campus-map" src="img/ginsburg-map.jpg" alt="Map of the west side of USC's campus with a star on Ginsburg Hall, between Childs Way and Downey Way just east of Vermont Avenue. The Downey Way Parking Structure is just to the southwest."></a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Ginsburg+Hall+1031+Downey+Way+Los+Angeles"><img class="campus-map" src="img/ginsburg-map.jpg" alt="Map of the west side of USC's campus with a star on Ginsburg Hall, between Childs Way and Downey Way just east of Vermont Avenue."></a>
       <p style="font-size:.85rem; color:var(--muted); margin:6px 0 0">Map data © Google. <a href="https://www.google.com/maps/search/?api=1&amp;query=Ginsburg+Hall+1031+Downey+Way+Los+Angeles">Open in Google Maps</a> · <a href="https://maps.usc.edu/">USC campus map</a></p>
     </div>
   </div>
